@@ -4,7 +4,6 @@ var merge = require('webpack-merge')
 var utils = require('./utils')
 var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-var dirName = process.argv[2] || 'app';
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
@@ -27,9 +26,9 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.NoErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      favicon: './'+ dirName + '/assets/logo.png',
+      favicon: './'+ config.build.dirName + '/assets/logo.png',
       filename: 'index.html',
-      template: './'+ dirName +'/index.html',
+      template: './'+ config.build.dirName +'/index.html',
       inject: true
     })
   ]

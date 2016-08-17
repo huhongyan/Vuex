@@ -10,6 +10,8 @@ Vue.use(Vuex)
 // 整合初始状态和变更函数，我们就得到了我们所需的 store
 // 至此，这个 store 就可以连接到我们的应用中
 export default new Vuex.Store({
+		// 开发模式下，开启严格模式
+		strict: process.env.NODE_ENV !== 'production',
 		// 组合各个模块
 		modules: {
 				// count 模块的初始状态会作为 store.state.count 被设置到底层 state 树上
