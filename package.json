@@ -6,9 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "devlogin": "node build/dev-server.js login",
     "build": "node build/build.js",
-    "buildlogin": "node build/build.js login",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit"
   },
