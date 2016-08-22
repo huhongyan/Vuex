@@ -10,7 +10,7 @@
 </template>
 
 <script>
-    import { incrementCounter, decrementCounter } from '../vuex/actions/counter'
+    import { incrementCounter, decrementCounter } from '../../vuex/actions/counter'
     export default {
         vuex: {
             actions: {

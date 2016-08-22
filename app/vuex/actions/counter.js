@@ -2,7 +2,7 @@
  * Created by Huhy on 2016/8/17.
  */
 
-import { INCREMENT, DECREMENT } from '../comstants/count'
+import { INCREMENT, DECREMENT } from '../constants/count'
 
 // action 会收到 store 作为它的第一个参数
 // 既然我们只对事件的分发（dispatch 对象）感兴趣。（state 也可以作为可选项放入）

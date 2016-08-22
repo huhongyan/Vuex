@@ -1,7 +1,7 @@
 /**
  * Created by Huhy on 2016/8/17.
  */
-import { INCREMENT, DECREMENT } from '../comstants/count'
+import { INCREMENT, DECREMENT } from '../constants/count'
 
 // 该模块的初始状态
 // 创建一个对象来保存应用启动时的初始状态

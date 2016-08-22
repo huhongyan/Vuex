@@ -5,7 +5,7 @@
     </div>
 </template>
 <script>
-    import { incrementCounter} from '../vuex/actions/counter'
+    import { incrementCounter} from '../../vuex/actions/counter'
     export default {
         data: function() {
             return {
