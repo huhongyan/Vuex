@@ -57,12 +57,12 @@
                 </td>
             </tr>
             <tr v-if="!curData">
-                <td colspan="{{params.fields.length}}" class="text-center">
+                <td colspan="{{config.fields.length}}" class="text-center">
                     loading
                 </td>
             </tr>
             <tr v-if="curData && !curData.length">
-                <td colspan="{{params.fields.length}}" class="text-center">
+                <td colspan="{{config.fields.length}}" class="text-center">
                     没有数据
                 </td>
             </tr>
@@ -116,11 +116,14 @@ export default {
             sort: {}
         }
     },
+    created: function(){
+
+    },
     components: {
         Pagination
     },
     computed: {
-        curData: function(){
+        curData: function() {
             return this.data.data
         },
         page: function(){
@@ -163,13 +166,20 @@ export default {
             });
         },
         _reload: function(){
-            let fn = this.config.callback;
-            fn && fn.apply(null, arguments);
+            let fn = this.config.callback,
+                data = [];
+
+            Object.assign(data, this.data.data);
+
+            this.data.data = '';
+
+            fn && fn.call(this.$parent, this._merge({
+                oldData: data
+            },...arguments));
         },
         _merge: function(){
             let res = {};
             Object.assign(res, ...arguments);
-
             return res;
         }
     },

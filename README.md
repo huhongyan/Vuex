@@ -1,6 +1,6 @@
-# test
+# learning Vue
 
-> test
+> Demo of Learning Vue
 
 ## Build Setup
 

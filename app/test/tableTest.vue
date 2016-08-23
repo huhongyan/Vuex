@@ -68,6 +68,20 @@
                     ],
                     callback: function(arg){
                         console.log(JSON.stringify(arg))
+                        let vm = this;
+                        setTimeout(function(){
+                            vm.data.data = [{
+                                "test1": "aaa",
+                                "test2": {
+                                    href: "#",
+                                    txt: "bbb"
+                                },
+                                "test3": "ccc",
+                                "test4": "ddd",
+                                "test5": "eee"
+                            }]
+                        }, 1000);
+
                     }
                 },
                 data: {
@@ -110,7 +124,7 @@
                             "test5": "eee"
                         }
                     ],
-                    total: 130,
+                    total: 165,
                     pageNumber: 1
                 }
             }
