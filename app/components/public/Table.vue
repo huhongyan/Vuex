@@ -41,10 +41,10 @@
                     class="{{field | sortClass}}"
                     @click="triggerSort(field.sort, field, $index)">
                     <label v-if="field.sort">
-                        {{field.name}}
+                        {{field.text}}
                         <i class="m-sort-icon"></i>
                     </label>
-                    <label v-else>{{field.name}}</label>
+                    <label v-else>{{field.text}}</label>
                 </th>
             </tr>
         </thead>
@@ -68,7 +68,7 @@
             </tr>
         </tbody>
     </table>
-    <Pagination :params="page"></Pagination>
+    <Pagination :params="page" v-if="config.pagination"></Pagination>
 </template>
 <script>
 import Pagination from './Pagination'
@@ -94,6 +94,7 @@ export default {
                 // sortClass
                 // descClass
                 // ascClass
+                // pagination 是否分页
 
                 // page group
                 // pageSize: 每页展示的数据量
@@ -115,9 +116,6 @@ export default {
         return {
             sort: {}
         }
-    },
-    created: function(){
-
     },
     components: {
         Pagination
