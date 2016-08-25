@@ -37,7 +37,7 @@
     <table :class="config.className || 'table table-striped table-hover'">
         <thead>
             <tr>
-                <th v-if="config.sequence">{{config.sequence}}</th>
+                <th v-if="config.sequence !== false">{{config.sequence !== true ? config.sequence : ''}}</th>
                 <th v-for="field in config.fields"
                     class="{{field | sortClass}}"
                     @click="triggerSort(field.sort, field, $index)">
@@ -51,7 +51,7 @@
         </thead>
         <tbody>
             <tr v-for="(index, item) in curData">
-                <td v-if="config.sequence">{{index | sequence}}</td>
+                <td v-if="config.sequence !== false">{{index | sequence}}</td>
                 <td v-for="field in config.fields">
                     <button v-for="operate in field.operates" :class="operate.className"
                             @click="triggerOperate(operate.handler, item, index)">{{operate.text}}</button>

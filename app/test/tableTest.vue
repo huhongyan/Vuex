@@ -17,7 +17,7 @@
                     //pageSize: 10,
                     //pageList: [10, 20, 30, 40, 50],
                     pagination: true,
-                    sequence: '序号',
+                    sequence: 1,
                     fields: [
                         {
                             name: 'test1',
