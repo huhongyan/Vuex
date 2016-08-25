@@ -16,8 +16,8 @@
                     className: 'table table-striped table-hover table-bordered',
                     //pageSize: 10,
                     //pageList: [10, 20, 30, 40, 50],
-                    pagination: true
-                    ,
+                    pagination: true,
+                    sequence: '序号',
                     fields: [
                         {
                             name: 'test1',
