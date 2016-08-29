@@ -1,17 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import  count from './modules/Count'
-import  other from './modules/Other'
+import count from './modules/Count'
+import other from './modules/Other'
+import dialog from './modules/Dialog'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-		// ¿ª·¢Ä£Ê½ÏÂ£¬¿ªÆôÑÏ¸ñÄ£Ê½
-		strict: process.env.NODE_ENV !== 'production',
-		// ×éºÏ¸÷¸öÄ£¿é
-		modules: {
-				count,
-				other
-		}
+  // å¼€å‘æ¨¡å¼ä¸‹ï¼Œå¼€å¯ä¸¥æ ¼æ¨¡å¼
+  strict: process.env.NODE_ENV !== 'production',
+  // ç»„åˆå„ä¸ªæ¨¡å—
+  modules: {
+    count,
+    other,
+    dialog
+  }
 })

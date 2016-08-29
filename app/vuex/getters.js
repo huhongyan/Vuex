@@ -1,7 +1,27 @@
-// Õâ¸ö getter º¯Êý»á·µ»Ø count µÄÖµ
-// ÔÚ ES6 ÀïÄã¿ÉÒÔÐ´³É£º
+// è¿™ä¸ª getter å‡½æ•°ä¼šè¿”å›ž count çš„å€¼
+// åœ¨ ES6 é‡Œä½ å¯ä»¥å†™æˆï¼š
 // export const getCount = state => state.count
 
 export function getCount (state) {
-		return state.count.count
+  return state.count.count
 }
+/**
+ * èŽ·å–dialogçš„title
+ * @param state
+ */
+export const getDialogTitle = state => state.dialog.title;
+/**
+ * èŽ·å–dialogçš„message
+ * @param state
+ */
+export const getDialogMsg = state => state.dialog.message;
+/**
+ * èŽ·å–dialogçš„submitå›žè°ƒå‡½æ•°
+ * @param state
+ */
+export const getDialogHandler = state => state.dialog.handler;
+/**
+ * æ˜¯å¦æ˜¾ç¤ºdialog
+ * @param state
+ */
+export const dialogIsShow = state => state.dialog.isShow;
