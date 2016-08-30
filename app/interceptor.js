@@ -9,7 +9,7 @@ export default function(router) {
                 showDialog(store, {
                     title: '温馨提示',
                     message: '您还未登录，或登陆已超时，请重新登陆！',
-                    handle: function () {
+                    handler: function () {
                         router.go('login');
                         hideDialog(store);
                     }
