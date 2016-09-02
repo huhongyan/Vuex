@@ -147,7 +147,7 @@ export default {
     },
     methods: {
         triggerOperate: function(handler, obj, index){
-            handler && handler(obj, this.curData, index);
+            handler && handler.apply(this.$parent, [obj, this.curData, index]);
         },
         triggerSort: function(isSort ,field, index){
             if(!isSort) return false;
@@ -186,7 +186,7 @@ export default {
     },
     filters: {
         format: function(value, formatter, obj, index){
-            return formatter && formatter(value, obj, this.curData, index) || value
+            return formatter && formatter.apply(this.$parent.$parent.$parent, [value, obj, this.curData, index]) || value
         },
         sortClass: function(field){
             if(field.sort) {
