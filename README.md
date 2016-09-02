@@ -18,4 +18,4 @@ npm run build
 
 ## 组件说明
 
-[vue-table](https://github.com/huhongyan/Vuex/wiki/Table.vue)
+[vue-table](https://github.com/huhongyan/Vuex/blob/master/app/doc/vue-table.md)
