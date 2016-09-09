@@ -151,7 +151,7 @@
             },
             pageCount: function(){
                 let params = this.params;
-                return params.pageCount || Math.ceil(Number(params.total) / this.pageSize)
+                return params.pageCount || Math.ceil((Number(params.total) || 0) / this.pageSize)
             },
             buttons: function(){
                 let btns = [],
