@@ -54,6 +54,7 @@
                 <td v-if="config.sequence !== false">{{index | sequence}}</td>
                 <td v-for="field in config.fields">
                     <button v-for="operate in field.operates" :class="operate.className"
+                            v-show-btn="typeof operate.isShow === 'function' ? operate.isShow.call(this.$parent.$parent.$parent.$parent, item) : operate.isShow"
                             @click="triggerOperate(operate.handler, item, index)">{{operate.text}}</button>
                     {{{item[field.name] | format field.formatter item index}}}
                 </td>
@@ -210,6 +211,11 @@ export default {
                 size = Number(this.config.pageSize) || 0;
 
             return (num - 1) * size + index + 1;
+        }
+    },
+    directives: {
+        'show-btn': function (isShow) {
+            if(isShow === false) this.el.remove()
         }
     }
 }
